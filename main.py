@@ -78,6 +78,25 @@ class MediUI:
                     "3": "TUMOR",
                 },
                 "num_classes": 4
+            },
+            "lungs": {
+                "labels": {
+                    "0": "PNEUMONIA (BACTERIAL)",
+                    "1": "CORONA",
+                    "2": "NORMAL",
+                    "3": "TUBERCLOSIS",
+                    "4": "PNEUMONIA (VIRAL)"
+                },
+                "num_classes": 5
+            },
+            "blood": {
+                "labels": {
+                    "0": "BENIGN",
+                    "1": "MALIGNANT (PRE-B)",
+                    "2": "MALIGNANT (PRO B)",
+                    "3": "MALIGNANT (EARLY PRE-B)",
+                },
+                "num_classes": 4
             }
         }
 
