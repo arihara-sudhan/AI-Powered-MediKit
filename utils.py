@@ -106,9 +106,9 @@ def classify_img(category, image_file_path, num_classes):
 def open_site(link):
     webbrowser.open(link)
 
-def show_image(image_path, category, text, font_scale=0.8, thickness=2, background_height=100):
+def show_image(image_path, category, text, font_scale=1, thickness=2, background_height=100):
     image = cv2.imread(image_path)
-    height, width, _ = image.shape
+    _, width, _ = image.shape
 
     font_color = (0, 255, 0)
     font = cv2.FONT_HERSHEY_SIMPLEX

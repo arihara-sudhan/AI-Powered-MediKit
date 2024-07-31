@@ -69,6 +69,15 @@ class MediUI:
                     "1": "FUSION"
                 },
                 "num_classes": 5
+            },
+            "kidney": {
+                "labels": {
+                    "0": "CYST",
+                    "1": "NORMAL",
+                    "2": "STONE",
+                    "3": "TUMOR",
+                },
+                "num_classes": 4
             }
         }
 
