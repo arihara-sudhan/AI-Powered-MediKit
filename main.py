@@ -47,7 +47,7 @@ class MediUI:
             "blood": "Blood Cancer",
             "oral": "Oral Mouth",
             "brain": "Brain Ana",
-            "cancer": "Breast Cancer",
+            "breast": "Normal | Cancer",
             "heart": "LAPTAP",
             "herb": "Herbical Solutions"
         }
