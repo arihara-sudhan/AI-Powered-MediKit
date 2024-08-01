@@ -53,6 +53,24 @@ class MediUI:
         }
 
         self.classes = {
+            "breast": {
+                "labels": {
+                    "0": "CANCER",
+                    "1": "NORMAL"
+                },
+                "num_classes": 2
+            },
+            "eye": {
+                "labels": {
+                    "0": "ACRIMA",
+                    "1": "ODIR",
+                    "2": "ORIGA",
+                    "3": "GLAUCOMA",
+                    "4": "CATARACT",
+                    "5": "RETINAL DISEASE"
+                },
+                "num_classes": 6
+            },
             "colon": {
                 "labels": {
                     "0": "LEISON",
@@ -181,6 +199,7 @@ def main():
                 mx, my = pg.mouse.get_pos()
                 clicked_module = med_ui.mousepos_process(mx, my)
                 if clicked_module:
+                    print(clicked_module)
                     if clicked_module == "herb":
                         user_prompt = utils.get_text_from_user()
                         if user_prompt:
