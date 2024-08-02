@@ -1,4 +1,5 @@
 import classify_image
+import classify_tablet
 import cv2
 import glob
 import json
@@ -7,17 +8,29 @@ import numpy as np
 import os
 import pygame as pg
 from PyQt5.QtWidgets import QApplication, QFileDialog, QInputDialog
+import pyttsx3
 from screeninfo import get_monitors
 from sentence_transformers import SentenceTransformer
 import sys
+import threading
 import webbrowser
 
+engine = pyttsx3.init()
+rate = engine.getProperty('rate')
+engine.setProperty('rate', 100)
 mixer = pg.mixer
 mixer.init()
 
+def speak(txt):
+    engine.say(txt)
+    engine.runAndWait()
+    engine.stop()
+
 def play_audio(file_path):
-    mixer.music.load(file_path)
-    mixer.music.play()
+    def play_audio_thread(file_path):
+        mixer.music.load(file_path)
+        mixer.music.play()
+    threading.Thread(target=play_audio_thread, args=(file_path,)).start()
 
 def pause_audio():
     mixer.music.pause()
@@ -126,3 +139,11 @@ def show_image(image_path, category, text, font_scale=1, thickness=2, background
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
+
+
+def classify_medicine():
+    classify_tablet.main()
+
+def get_meta(meta_name):
+    meta_file = f"./meta/{meta_name}.json"
+    return load_json_data(meta_file)

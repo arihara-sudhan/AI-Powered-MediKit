@@ -32,91 +32,9 @@ class MediUI:
         self.font_four = pg.font.Font("./assets/quicksand.ttf", 15)
         self.font_five = pg.font.Font("./assets/quicksand.ttf", 20)
         self.result_text = None
+        self.features = utils.get_meta("features")
 
-        self.features = {
-            "kidney": "Stone, Cyst, Tumor",
-            "ecg": "ECG Analysis",
-            "chatbot": "Get Instant Answers",
-            "lungs": "Corona | Pneumonia | TB",
-            "eye": "Eye Eye",
-            "bone": "Bone Marrow",
-            "tablet": "Fewshot Classification",
-            "heartbeat": "Heartbeat Analysis",
-            "bot": "Chatbot",
-            "colon": "Normal | Leison",
-            "blood": "Blood Cancer",
-            "oral": "Oral Mouth",
-            "brain": "Brain Ana",
-            "breast": "Normal | Cancer",
-            "heart": "LAPTAP",
-            "herb": "Herbical Solutions"
-        }
-
-        self.classes = {
-            "breast": {
-                "labels": {
-                    "0": "CANCER",
-                    "1": "NORMAL"
-                },
-                "num_classes": 2
-            },
-            "eye": {
-                "labels": {
-                    "0": "ACRIMA",
-                    "1": "ODIR",
-                    "2": "ORIGA",
-                    "3": "GLAUCOMA",
-                    "4": "CATARACT",
-                    "5": "RETINAL DISEASE"
-                },
-                "num_classes": 6
-            },
-            "colon": {
-                "labels": {
-                    "0": "LEISON",
-                    "1": "NORMAL"
-                },
-                "num_classes": 2
-            },
-            "ecg": {
-                "labels": {
-                    "0": "NORMAL",
-                    "4": "VENTRICULAR",
-                    "2": "UNKNOWN",
-                    "3": "SUPRAVENTRICULAR",
-                    "1": "FUSION"
-                },
-                "num_classes": 5
-            },
-            "kidney": {
-                "labels": {
-                    "0": "CYST",
-                    "1": "NORMAL",
-                    "2": "STONE",
-                    "3": "TUMOR",
-                },
-                "num_classes": 4
-            },
-            "lungs": {
-                "labels": {
-                    "0": "PNEUMONIA (BACTERIAL)",
-                    "1": "CORONA",
-                    "2": "NORMAL",
-                    "3": "TUBERCLOSIS",
-                    "4": "PNEUMONIA (VIRAL)"
-                },
-                "num_classes": 5
-            },
-            "blood": {
-                "labels": {
-                    "0": "BENIGN",
-                    "1": "MALIGNANT (PRE-B)",
-                    "2": "MALIGNANT (PRO B)",
-                    "3": "MALIGNANT (EARLY PRE-B)",
-                },
-                "num_classes": 4
-            }
-        }
+        self.classes = utils.get_meta("classes")
 
     def blit_bg_image(self, img):
         self.screen.blit(img, (0, 0))
@@ -227,10 +145,9 @@ def main():
                                 print(result)
                                 med_ui.result_text = med_ui.classes[clicked_module]["labels"][str(result)]
                                 utils.show_image(image_file_path, clicked_module, med_ui.result_text)
+                                utils.speak(med_ui.result_text)
                             else:
                                 med_ui.result_text = "Model can't classify this!"
-                        else:
-                            med_ui.result_text = "Pardon! Check your filepath.."
                         restext = 1
     
         if med_ui.bg_images:
