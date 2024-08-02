@@ -1,4 +1,13 @@
 {
+    "brain": {
+        "labels": {
+            "0": "Glioma",
+            "1": "Meningioma",
+            "2": "Normal",
+            "3": "Pituitary Tumor"
+        },
+        "num_classes": 4
+    },
     "breast": {
         "labels": {
             "0": "CANCER",

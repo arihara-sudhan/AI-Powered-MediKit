@@ -8,7 +8,7 @@ class MediUI:
     def __init__(self):
         pg.init()
         self.display = pg.display
-        self.width, self.height = utils.get_screen_size()
+        self.width, self.height =  utils.get_screen_size()
         self.display.set_caption("AI Powered MediKit")
         self.size = (self.width, self.height)
         self.screen = self.display.set_mode(self.size, pg.SRCALPHA)  # Enable alpha for transparency
@@ -20,28 +20,29 @@ class MediUI:
         self.module_img_pos = dict()
         
         self.bg_glass = pg.image.load("./assets/black-bg.png").convert_alpha()
-        self.bg_glass = pg.transform.scale(self.bg_glass, (int(self.width * 0.4), int(self.height + 100)))
+        self.bg_glass = pg.transform.scale(self.bg_glass, (self.width//2 - (self.width//2)*0.26, self.height + self.height*0.4))
         self.bg_glass.set_alpha(200)  # Set transparency level
 
         self.select_img = pg.image.load("./assets/select.png").convert_alpha()
         self.select_img = pg.transform.scale(self.select_img, (self.module_size[0] + 40, self.module_size[1] + 40))
 
-        self.font = pg.font.Font("./assets/quicksand.ttf", 85)
+        self.font = pg.font.Font("./assets/quicksand.ttf", int(self.width*0.08))
         self.font_two = pg.font.Font("./assets/quicksand.ttf", 20)
         self.font_three = pg.font.Font("./assets/quicksand.ttf", 10)
         self.font_four = pg.font.Font("./assets/quicksand.ttf", 15)
         self.font_five = pg.font.Font("./assets/quicksand.ttf", 20)
         self.result_text = None
         self.features = utils.get_meta("features")
-
+        self.site = "https://arihara-sudhan.github.io/AI-Powered-MediKit"
         self.classes = utils.get_meta("classes")
+        self.should_open_site = True
 
     def blit_bg_image(self, img):
         self.screen.blit(img, (0, 0))
 
     def blit_module_images(self, images):
         x, y = 5, 5
-        self.screen.blit(self.bg_glass, (-40, -90))  # Draw bg_glass with transparency
+        self.screen.blit(self.bg_glass, (-4, -90))  # Draw bg_glass with transparency
         for i, image in enumerate(images):
             self.screen.blit(image, (x, y))
             self.module_img_pos[self.module_img_paths[i]] = (x, y)
@@ -102,6 +103,7 @@ def main():
     total_frames = len(med_ui.bg_images)
     frame_rate = 30
     bg_frame_direction = 1
+    clicked_module = None
 
     while APP_STATE:
         for event in pg.event.get():
@@ -112,7 +114,8 @@ def main():
                     utils.pause_audio()
             elif event.type == pg.MOUSEBUTTONDOWN:
                 if res_text_rect and res_text_rect.collidepoint(event.pos):
-                    utils.open_site("https://google.com")
+                    if clicked_module and med_ui.should_open_site:
+                        utils.open_site(med_ui.site +"/#"+clicked_module)
 
                 mx, my = pg.mouse.get_pos()
                 clicked_module = med_ui.mousepos_process(mx, my)
@@ -125,16 +128,18 @@ def main():
                             closest = utils.find_closest_record(user_prompt, metadata)
                             med_ui.result_text = f"{closest['name']} can be used to cure this condition!"
                             restext = 1
+                            med_ui.should_open_site = False
                             utils.show_image(closest["img_path"], "Herbal Solution", closest["name"])
 
                     elif clicked_module == "heartbeat":
                         audio_file_path = utils.browse_file("Audio Files (*.mp3 *.wav)")
                         if audio_file_path:
-                            utils.play_audio(audio_file_path)
                             label = utils.classify_audio(audio_file_path)
                             if label:
                                 med_ui.result_text = label
                                 restext = 1
+                                med_ui.should_open_site = True
+                                utils.play_audio(audio_file_path)
                             else:
                                 print("SOMETHING WENT WRONG")
                     else:
@@ -144,8 +149,8 @@ def main():
                             if type(result)==int:
                                 print(result)
                                 med_ui.result_text = med_ui.classes[clicked_module]["labels"][str(result)]
+                                med_ui.should_open_site = True
                                 utils.show_image(image_file_path, clicked_module, med_ui.result_text)
-                                utils.speak(med_ui.result_text)
                             else:
                                 med_ui.result_text = "Model can't classify this!"
                         restext = 1
