@@ -4,3 +4,4 @@ __pycache__
 medenv/
 meta/embeddings.json
 TabletImages
+TestData
