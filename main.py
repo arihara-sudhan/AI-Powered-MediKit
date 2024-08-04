@@ -142,6 +142,9 @@ def main():
                                 utils.play_audio(audio_file_path)
                             else:
                                 print("SOMETHING WENT WRONG")
+                    elif clicked_module == "tablet":
+                        utils.classify_medicine()
+
                     else:
                         image_file_path = utils.browse_file()
                         if image_file_path:

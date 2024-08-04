@@ -6,6 +6,7 @@ import json
 import librosa
 import numpy as np
 import os
+from PIL import Image
 import pygame as pg
 from PyQt5.QtWidgets import QApplication, QFileDialog, QInputDialog
 import pyttsx3
@@ -13,6 +14,8 @@ from screeninfo import get_monitors
 from sentence_transformers import SentenceTransformer
 import sys
 import threading
+import torch
+from triplet_class import Model
 import webbrowser
 
 engine = pyttsx3.init()
@@ -139,11 +142,63 @@ def show_image(image_path, category, text, font_scale=1, thickness=2, background
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
-
-
 def classify_medicine():
     classify_tablet.main()
 
 def get_meta(meta_name):
     meta_file = f"./meta/{meta_name}.json"
     return load_json_data(meta_file)
+
+
+def get_image_embeddings_from_folder(folder_path, device=None):
+    if device is None:
+        device = torch.device("cpu")
+    Model.model.eval()
+    embeddings = {}
+    for class_folder in os.listdir(folder_path):
+        class_path = os.path.join(folder_path, class_folder)
+        if os.path.isdir(class_path):
+            class_embeddings = embeddings.get(class_folder, [])  # Get existing embeddings if any
+            for image_name in os.listdir(class_path):
+                image_path = os.path.join(class_path, image_name)
+                try:
+                    image = Image.open(image_path).convert('RGB')
+                    image = Model.transform(image).unsqueeze(0).to(device)
+                    with torch.no_grad():
+                        embedding = Model.model(image).cpu().numpy().tolist()  # Convert to list for JSON serialization
+                    class_embeddings.append(embedding)
+                except Exception as e:
+                    print(f"Error processing image {image_path}: {e}")
+            embeddings[class_folder] = class_embeddings
+    return embeddings
+
+def load_existing_embeddings(json_file_path):
+    if os.path.exists(json_file_path):
+        try:
+            with open(json_file_path, 'r') as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"Error loading existing embeddings from JSON: {e}")
+            return {}
+    return {}
+
+def save_embeddings_to_json(embeddings, json_file_path):
+    try:
+        with open(json_file_path, 'w') as f:
+            json.dump(embeddings, f)
+        print(f"Embeddings successfully saved to {json_file_path}")
+    except Exception as e:
+        print(f"Error saving embeddings to JSON: {e}")
+
+def add_class_embs():
+    folder_path = "TabletImages/"
+    json_file_path = "meta/embeddings.json"
+    existing_embeddings = load_existing_embeddings(json_file_path)
+    new_embeddings = get_image_embeddings_from_folder(folder_path)
+    updated_embeddings = existing_embeddings.copy()
+    for class_name in list(updated_embeddings.keys()):
+        if class_name not in new_embeddings:
+            print(f"Removing class {class_name} from embeddings")
+            del updated_embeddings[class_name]
+    updated_embeddings.update(new_embeddings)
+    save_embeddings_to_json(updated_embeddings, json_file_path)

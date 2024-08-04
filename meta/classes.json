@@ -70,5 +70,12 @@
             "3": "MALIGNANT (EARLY PRE-B)"
         },
         "num_classes": 4
+    },
+    "oral": {
+        "labels": {
+            "0": "NORMAL",
+            "1": "CANCER"
+        },
+        "num_classes": 2
     }
 }
