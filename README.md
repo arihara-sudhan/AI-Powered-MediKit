@@ -4,6 +4,9 @@ AI Powered MediKit - A Bundle Service specially made for Medical Niche
 # ☤ Stunning User(Doctor) Interface
 <img src="sample.png" alt="">
 
+# Get Models
+> Download models from [PLETHORA OF MODELS](https://drive.google.com/drive/folders/1_ruz4r9T4pgJNosVuI7wbODNqQPQ_Pt4?usp=sharing) and keep them all in "models" folder in pwd of main.py
+
 # To RUN
   > python3 main.py
 
