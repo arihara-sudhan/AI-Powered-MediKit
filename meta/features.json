@@ -4,7 +4,7 @@
     "chatbot": "Get Instant Answers",
     "lungs": "Corona | Pneumonia | TB",
     "eye": "Eye Eye",
-    "bone": "Bone Marrow",
+    "bone": "Fractured or Not",
     "tablet": "Fewshot Classification",
     "heartbeat": "Heartbeat Analysis",
     "bot": "Chatbot",
@@ -13,6 +13,6 @@
     "oral": "Oral Cancer",
     "brain": "Brain Tumor",
     "breast": "Normal | Cancer",
-    "heart": "LAPTAP",
+    "heart": "Cardiomeghaly Check",
     "herb": "Herbical Solutions"
 }

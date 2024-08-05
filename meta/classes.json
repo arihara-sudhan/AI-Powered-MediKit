@@ -1,4 +1,11 @@
 {
+    "heart": {
+        "labels": {
+            "0": "CARDIOMEGHALY",
+            "1": "NORMAL"
+        },
+        "num_classes": 2
+    },
     "brain": {
         "labels": {
             "0": "Glioma",
@@ -7,6 +14,13 @@
             "3": "Pituitary Tumor"
         },
         "num_classes": 4
+    },
+    "bone": {
+        "labels": {
+            "0": "Fractured",
+            "1": "Not Fractured"
+        },
+        "num_classes": 2
     },
     "breast": {
         "labels": {
