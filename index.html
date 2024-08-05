@@ -24,107 +24,159 @@
             text-align: left;
         }
         img {
-          width: 100%;
-          border-radius: 1rem;
+            width: 100%;
+            border-radius: 1rem;
         }
         @media (max-width: 1000px){
-          section {
-            width: 100%;
-          }
+            section {
+                width: 100%;
+            }
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav li {
+            display: inline;
+            margin-right: 15px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <center>
-      <h1>+ MediKit</h1>
-  
-      <section id="breast">
-          <h2>Breast</h2>
-          <img src="https://news.mit.edu/sites/default/files/images/201905/BreastCancerAI.png" alt="">
-          <p><strong>CANCER:</strong> Breast cancer occurs when malignant cells form in the tissues of the breast.</p>
-          <p>Treatment: Surgery, chemotherapy, radiation therapy, hormone therapy, targeted therapy.</p>
-          <p><strong>NORMAL:</strong> Healthy breast tissue without abnormalities.</p>
-      </section>
-  
-      <section id="eye">
-          <h2>Eye</h2>
-          <img src="https://www.southtees.nhs.uk/wp-content/uploads/2021/11/Background-Retinopathy-R1-800x535.jpg" alt="">
-          <p><strong>ACRIMA:</strong> Conditions associated with dry eye or lacrimal gland issues.</p>
-          <p>Treatment: Artificial tears, medications, lifestyle changes, surgery.</p>
-          <p><strong>ODIR:</strong> Dataset-related condition; specifics unknown.</p>
-          <p><strong>ORIGA:</strong> Related to detecting glaucoma.</p>
-          <p>Treatment: Medications, laser therapy, surgery.</p>
-          <p><strong>GLAUCOMA:</strong> A condition damaging the optic nerve due to high intraocular pressure.</p>
-          <p>Treatment: Eye drops, medications, laser treatment, surgery.</p>
-          <p><strong>CATARACT:</strong> Clouding of the eye's lens leading to decreased vision.</p>
-          <p>Treatment: Surgery to replace the lens.</p>
-          <p><strong>RETINAL DISEASE:</strong> Includes various conditions like diabetic retinopathy and macular degeneration.</p>
-          <p>Treatment: Medications, laser therapy, surgery.</p>
-      </section>
-  
-      <section id="colon">
-          <h2>Colon</h2>
-          <img src="https://www.researchgate.net/publication/5689026/figure/fig1/AS:202963114041359@1425401585254/A-39-year-old-woman-with-mid-transverse-colon-cancer-Axial-CT-scan-reveals-irregular.png" alt="">
-          <p><strong>LESION:</strong> Abnormal tissue found in the colon, potentially benign or precancerous.</p>
-          <p>Treatment: Removal via colonoscopy, monitoring, surgery.</p>
-          <p><strong>NORMAL:</strong> Healthy colon tissue without abnormalities.</p>
-      </section>
-  
-      <section id="ecg">
-          <h2>ECG (Electrocardiogram)</h2>
-          <img src="https://i.pinimg.com/originals/3f/c4/eb/3fc4ebac5fb063cb0094dd1c0389d495.gif" alt="">
-          <p><strong>NORMAL:</strong> A standard ECG reading with no abnormalities.</p>
-          <p><strong>VENTRICULAR:</strong> Ventricular arrhythmias, abnormal heart rhythms in the lower chambers.</p>
-          <p>Treatment: Medications, ablation, implantable devices, surgery.</p>
-          <p><strong>UNKNOWN:</strong> Unspecified or unclear ECG result.</p>
-          <p>Treatment: Further diagnostic testing.</p>
-          <p><strong>SUPRAVENTRICULAR:</strong> Arrhythmias originating above the ventricles.</p>
-          <p>Treatment: Medications, cardioversion, ablation, surgery.</p>
-          <p><strong>FUSION:</strong> Combination of normal and abnormal heart impulses.</p>
-          <p>Treatment: Depends on underlying cause.</p>
-      </section>
-  
-      <section id="kidney">
-          <h2>Kidney</h2>
-          <img src="https://pocus101.b-cdn.net/wp-content/uploads/2020/09/Normal-Right-Kidney-Longitudinal-View-Renal-Ultrasound.gif" alt="">
-          <p><strong>CYST:</strong> Fluid-filled sacs in the kidneys, usually benign.</p>
-          <p>Treatment: Monitoring, draining, surgery.</p>
-          <p><strong>NORMAL:</strong> Healthy kidney tissue.</p>
-          <p><strong>STONE:</strong> Hard deposits in the kidneys.</p>
-          <p>Treatment: Increased water intake, medications, lithotripsy, surgery.</p>
-          <p><strong>TUMOR:</strong> Abnormal growths in the kidneys, benign or malignant.</p>
-          <p>Treatment: Surgery, chemotherapy, radiation, targeted therapy.</p>
-      </section>
-  
-      <section id="lungs">
-          <h2>Lungs</h2>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Spiral_4DCT_Lung_%28Post%29.gif/800px-Spiral_4DCT_Lung_%28Post%29.gif" alt="">
-          <p><strong>PNEUMONIA (BACTERIAL):</strong> Lung infection caused by bacteria.</p>
-          <p>Treatment: Antibiotics, rest, fluids.</p>
-          <p><strong>CORONA:</strong> COVID-19 infection.</p>
-          <p>Treatment: Symptomatic treatment, antivirals, oxygen therapy.</p>
-          <p><strong>NORMAL:</strong> Healthy lung tissue.</p>
-          <p><strong>TUBERCULOSIS:</strong> Bacterial infection of the lungs.</p>
-          <p>Treatment: Multiple antibiotics over a long period.</p>
-          <p><strong>PNEUMONIA (VIRAL):</strong> Lung infection caused by viruses.</p>
-          <p>Treatment: Rest, fluids, antivirals, supportive care.</p>
-      </section>
-  
-      <section id="blood">
-          <h2>Blood</h2>
-          <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a1cdefad-2d46-4016-b732-e1785a9e9e63/d9gyb8f-ceacbae8-3dd6-491f-90bd-41cf81de1357.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2ExY2RlZmFkLTJkNDYtNDAxNi1iNzMyLWUxNzg1YTllOWU2M1wvZDlneWI4Zi1jZWFjYmFlOC0zZGQ2LTQ5MWYtOTBiZC00MWNmODFkZTEzNTcuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.oNsWfYg2sCfYuW_uxCIJvCJxcZDloCtqBqvql0z5vQk" alt="">
-          <p><strong>BENIGN:</strong> Non-cancerous blood conditions.</p>
-          <p>Treatment: Monitoring, treatment based on the condition.</p>
-          <p><strong>MALIGNANT (PRE-B):</strong> Precursor B-cell acute lymphoblastic leukemia (ALL).</p>
-          <p>Treatment: Chemotherapy, targeted therapy, radiation, stem cell transplant.</p>
-          <p><strong>MALIGNANT (PRO B):</strong> B-cell acute lymphoblastic leukemia (ALL).</p>
-          <p>Treatment: Similar to PRE-B; chemotherapy, targeted therapy, stem cell transplant.</p>
-          <p><strong>MALIGNANT (EARLY PRE-B):</strong> Early stage B-cell ALL.</p>
-          <p>Treatment: Chemotherapy, targeted therapy, stem cell transplant.</p>
-      </section>
+        <h1>+ MediKit</h1>
+
+        <section id="heart">
+            <h2>Heart</h2>
+            <img src="https://www.cdc.gov/dhdsp/images/heart/overview/illustration-heart.jpg" alt="">
+            <p><strong>CARDIOMEGALY:</strong> Enlargement of the heart.</p>
+            <p>Treatment: Medications, surgery, lifestyle changes.</p>
+            <p><strong>NORMAL:</strong> A healthy heart without abnormalities.</p>
+        </section>
+
+        <section id="brain">
+            <h2>Brain</h2>
+            <img src="https://cdn.pixabay.com/photo/2016/03/31/20/11/brain-1298121_960_720.png" alt="">
+            <p><strong>GLIOMA:</strong> A type of tumor that occurs in the brain and spinal cord.</p>
+            <p>Treatment: Surgery, radiation therapy, chemotherapy.</p>
+            <p><strong>MENINGIOMA:</strong> A tumor that forms on membranes covering the brain and spinal cord.</p>
+            <p>Treatment: Surgery, radiation therapy.</p>
+            <p><strong>NORMAL:</strong> Healthy brain tissue without abnormalities.</p>
+            <p><strong>PITUITARY TUMOR:</strong> A growth in the pituitary gland at the base of the brain.</p>
+            <p>Treatment: Surgery, radiation therapy, medication.</p>
+        </section>
+
+        <section id="bone">
+            <h2>Bone</h2>
+            <img src="https://cdn.pixabay.com/photo/2018/04/10/14/49/knee-3312923_960_720.jpg" alt="">
+            <p><strong>FRACTURED:</strong> A break or crack in the bone.</p>
+            <p>Treatment: Casting, surgery, physical therapy.</p>
+            <p><strong>NOT FRACTURED:</strong> Healthy bone without fractures.</p>
+        </section>
+
+        <section id="breast">
+            <h2>Breast</h2>
+            <img src="https://news.mit.edu/sites/default/files/images/201905/BreastCancerAI.png" alt="">
+            <p><strong>CANCER:</strong> Breast cancer occurs when malignant cells form in the tissues of the breast.</p>
+            <p>Treatment: Surgery, chemotherapy, radiation therapy, hormone therapy, targeted therapy.</p>
+            <p><strong>NORMAL:</strong> Healthy breast tissue without abnormalities.</p>
+        </section>
+
+        <section id="eye">
+            <h2>Eye</h2>
+            <img src="https://www.southtees.nhs.uk/wp-content/uploads/2021/11/Background-Retinopathy-R1-800x535.jpg" alt="">
+            <p><strong>ACRIMA:</strong> Conditions associated with dry eye or lacrimal gland issues.</p>
+            <p>Treatment: Artificial tears, medications, lifestyle changes, surgery.</p>
+            <p><strong>ODIR:</strong> Dataset-related condition; specifics unknown.</p>
+            <p><strong>ORIGA:</strong> Related to detecting glaucoma.</p>
+            <p>Treatment: Medications, laser therapy, surgery.</p>
+            <p><strong>GLAUCOMA:</strong> A condition damaging the optic nerve due to high intraocular pressure.</p>
+            <p>Treatment: Eye drops, medications, laser treatment, surgery.</p>
+            <p><strong>CATARACT:</strong> Clouding of the eye's lens leading to decreased vision.</p>
+            <p>Treatment: Surgery to replace the lens.</p>
+            <p><strong>RETINAL DISEASE:</strong> Includes various conditions like diabetic retinopathy and macular degeneration.</p>
+            <p>Treatment: Medications, laser therapy, surgery.</p>
+        </section>
+
+        <section id="colon">
+            <h2>Colon</h2>
+            <img src="https://www.researchgate.net/publication/5689026/figure/fig1/AS:202963114041359@1425401585254/A-39-year-old-woman-with-mid-transverse-colon-cancer-Axial-CT-scan-reveals-irregular.png" alt="">
+            <p><strong>LESION:</strong> Abnormal tissue found in the colon, potentially benign or precancerous.</p>
+            <p>Treatment: Removal via colonoscopy, monitoring, surgery.</p>
+            <p><strong>NORMAL:</strong> Healthy colon tissue without abnormalities.</p>
+        </section>
+
+        <section id="ecg">
+            <h2>ECG (Electrocardiogram)</h2>
+            <img src="https://i.pinimg.com/originals/3f/c4/eb/3fc4ebac5fb063cb0094dd1c0389d495.gif" alt="">
+            <p><strong>NORMAL:</strong> A standard ECG reading with no abnormalities.</p>
+            <p><strong>VENTRICULAR:</strong> Ventricular arrhythmias, abnormal heart rhythms in the lower chambers.</p>
+            <p>Treatment: Medications, ablation, implantable devices, surgery.</p>
+            <p><strong>UNKNOWN:</strong> Unspecified or unclear ECG result.</p>
+            <p>Treatment: Further diagnostic testing.</p>
+            <p><strong>SUPRAVENTRICULAR:</strong> Arrhythmias originating above the ventricles.</p>
+            <p>Treatment: Medications, cardioversion, ablation, surgery.</p>
+            <p><strong>FUSION:</strong> Combination of normal and abnormal heart impulses.</p>
+            <p>Treatment: Depends on underlying cause.</p>
+        </section>
+
+        <section id="kidney">
+            <h2>Kidney</h2>
+            <img src="https://pocus101.b-cdn.net/wp-content/uploads/2020/09/Normal-Right-Kidney-Longitudinal-View-Renal-Ultrasound.gif" alt="">
+            <p><strong>CYST:</strong> Fluid-filled sacs in the kidneys, usually benign.</p>
+            <p>Treatment: Monitoring, draining, surgery.</p>
+            <p><strong>NORMAL:</strong> Healthy kidney tissue.</p>
+            <p><strong>STONE:</strong> Hard deposits in the kidneys.</p>
+            <p>Treatment: Increased water intake, medications, lithotripsy, surgery.</p>
+            <p><strong>TUMOR:</strong> Abnormal growths in the kidneys, benign or malignant.</p>
+            <p>Treatment: Surgery, chemotherapy, radiation, targeted therapy.</p>
+        </section>
+
+        <section id="lungs">
+            <h2>Lungs</h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Spiral_4DCT_Lung_%28Post%29.gif/800px-Spiral_4DCT_Lung_%28Post%29.gif" alt="">
+            <p><strong>PNEUMONIA (BACTERIAL):</strong> Lung infection caused by bacteria.</p>
+            <p>Treatment: Antibiotics, rest, fluids.</p>
+            <p><strong>CORONA:</strong> COVID-19 infection.</p>
+            <p>Treatment: Symptomatic treatment, antivirals, oxygen therapy.</p>
+            <p><strong>NORMAL:</strong> Healthy lung tissue.</p>
+            <p><strong>TUBERCULOSIS:</strong> Bacterial infection of the lungs.</p>
+            <p>Treatment: Multiple antibiotics over a long period.</p>
+            <p><strong>PNEUMONIA (VIRAL):</strong> Lung infection caused by viruses.</p>
+            <p>Treatment: Rest, fluids, antivirals, supportive care.</p>
+        </section>
+
+        <section id="blood">
+            <h2>Blood</h2>
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a1cdefad-2d46-4016-b732-e1785a9e9e63/d9gyb8f-ceacbae8-3dd6-491f-90bd-41cf81de1357.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2ExY2RlZmFkLTJkNDYtNDAxNi1iNzMyLWUxNzg1YTllOWU2M1wvZDlneWI4Zi1jZWFjYmFlOC0zZGQ2LTQ5MWYtOTBiZC00MWNmODFkZTEzNTcuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.oNsWfYg2sCfYuW_uxCIJvCJxcZDloCtqBqvql0z5vQk" alt="">
+            <p><strong>BENIGN:</strong> Non-cancerous blood conditions.</p>
+            <p>Treatment: Monitoring, treatment based on the condition.</p>
+            <p><strong>MALIGNANT (PRE-B):</strong> Precursor B-cell acute lymphoblastic leukemia (ALL).</p>
+            <p>Treatment: Chemotherapy, targeted therapy, radiation, stem cell transplant.</p>
+            <p><strong>MALIGNANT (PRO B):</strong> B-cell acute lymphoblastic leukemia (ALL).</p>
+            <p>Treatment: Similar to PRE-B; chemotherapy, targeted therapy, stem cell transplant.</p>
+            <p><strong>MALIGNANT (EARLY PRE-B):</strong> Early stage B-cell ALL.</p>
+            <p>Treatment: Chemotherapy, targeted therapy, stem cell transplant.</p>
+        </section>
+
+        <section id="oral">
+            <h2>Oral</h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Human_tongue.jpg/640px-Human_tongue.jpg" alt="">
+            <p><strong>NORMAL:</strong> Healthy oral tissue.</p>
+            <p><strong>CANCER:</strong> Malignant cells in the oral cavity.</p>
+            <p>Treatment: Surgery, radiation therapy, chemotherapy.</p>
+        </section>
     </center>
     <nav>
         <ul>
+            <li><a href="#heart">Heart</a></li>
+            <li><a href="#brain">Brain</a></li>
+            <li><a href="#bone">Bone</a></li>
             <li><a href="#breast">Breast</a></li>
             <li><a href="#eye">Eye</a></li>
             <li><a href="#colon">Colon</a></li>
@@ -132,6 +184,7 @@
             <li><a href="#kidney">Kidney</a></li>
             <li><a href="#lungs">Lungs</a></li>
             <li><a href="#blood">Blood</a></li>
+            <li><a href="#oral">Oral</a></li>
         </ul>
     </nav>
 </body>
