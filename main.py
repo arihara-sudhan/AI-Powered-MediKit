@@ -145,12 +145,14 @@ def main():
                     elif clicked_module == "tablet":
                         utils.classify_medicine()
 
+                    elif clicked_module == "chatbot":
+                        utils.init_chatbot()
+
                     else:
                         image_file_path = utils.browse_file()
                         if image_file_path:
                             result = utils.classify_img(clicked_module, image_file_path, med_ui.classes[clicked_module]["num_classes"])
                             if type(result)==int:
-                                print(result)
                                 med_ui.result_text = med_ui.classes[clicked_module]["labels"][str(result)]
                                 med_ui.should_open_site = True
                                 utils.show_image(image_file_path, clicked_module, med_ui.result_text)

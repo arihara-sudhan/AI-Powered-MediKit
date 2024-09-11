@@ -17,6 +17,8 @@ import threading
 import torch
 from triplet_class import Model
 import webbrowser
+import chatbot
+
 
 engine = pyttsx3.init()
 rate = engine.getProperty('rate')
@@ -202,3 +204,6 @@ def add_class_embs():
             del updated_embeddings[class_name]
     updated_embeddings.update(new_embeddings)
     save_embeddings_to_json(updated_embeddings, json_file_path)
+
+def init_chatbot():
+    chatbot.init()

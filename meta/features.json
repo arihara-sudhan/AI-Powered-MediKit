@@ -14,5 +14,6 @@
     "brain": "Brain Tumor",
     "breast": "Normal | Cancer",
     "heart": "Cardiomeghaly Check",
-    "herb": "Herbical Solutions"
+    "herb": "Herbical Solutions",
+    "chatbot": "Medical Bot"
 }
