@@ -21,11 +21,11 @@ class MFCCNet(nn.Module):
         x = self.fc2(x)
         return x
     
-def classify_mfcc(mfcc, fixed_size=(13, 44)):
+def classify(mfcc, fixed_size=(13, 44)):
     model = MFCCNet(num_classes=5)
     model.load_state_dict(torch.load('models/mfcc_model.pth', map_location=torch.device('cpu')))
 
-    with open('./data/label_encoder_mfcc.pkl', 'rb') as f:
+    with open('data/audio/heartbeat/label_encoder_mfcc.pkl', 'rb') as f:
         label_encoder = pickle.load(f)
 
         if mfcc.shape[1] < fixed_size[1]:

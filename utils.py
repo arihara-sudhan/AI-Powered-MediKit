@@ -1,5 +1,6 @@
-import classify_image
-import classify_tablet
+from modules.img_classication import classify_image
+from modules.audio_classification import classify_mfcc
+from modules.text_similarity import chatbot
 import cv2
 import glob
 import json
@@ -15,11 +16,10 @@ from sentence_transformers import SentenceTransformer
 import sys
 import threading
 import torch
-from triplet_class import Model
 import webbrowser
-import chatbot
 
 
+SENTENCE_TRANSFORMER_MODEL = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 engine = pyttsx3.init()
 rate = engine.getProperty('rate')
 engine.setProperty('rate', 100)
@@ -88,7 +88,6 @@ def load_json_data(json_file_path):
 
 
 def find_closest_record(user_input, json_data):
-    SENTENCE_TRANSFORMER_MODEL = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
     user_emb = SENTENCE_TRANSFORMER_MODEL.encode(user_input)
     min_distance = float('inf')
     closest_record = None
@@ -107,10 +106,9 @@ def find_closest_record(user_input, json_data):
 
 def classify_audio(src_file_path, n_mfcc=13):
     if src_file_path.endswith(".wav"):
-        from classify_mfcc import classify_mfcc
         y, sr = librosa.load(src_file_path, sr=None)
         mfcc = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=n_mfcc)
-        label = classify_mfcc(mfcc)
+        label = classify_mfcc.classify(mfcc)
         print(type(label))
         if label:
             return label
@@ -144,45 +142,10 @@ def show_image(image_path, category, text, font_scale=1, thickness=2, background
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
-def classify_medicine():
-    classify_tablet.main()
 
 def get_meta(meta_name):
     meta_file = f"./meta/{meta_name}.json"
     return load_json_data(meta_file)
-
-
-def get_image_embeddings_from_folder(folder_path, device=None):
-    if device is None:
-        device = torch.device("cpu")
-    Model.model.eval()
-    embeddings = {}
-    for class_folder in os.listdir(folder_path):
-        class_path = os.path.join(folder_path, class_folder)
-        if os.path.isdir(class_path):
-            class_embeddings = embeddings.get(class_folder, [])  # Get existing embeddings if any
-            for image_name in os.listdir(class_path):
-                image_path = os.path.join(class_path, image_name)
-                try:
-                    image = Image.open(image_path).convert('RGB')
-                    image = Model.transform(image).unsqueeze(0).to(device)
-                    with torch.no_grad():
-                        embedding = Model.model(image).cpu().numpy().tolist()  # Convert to list for JSON serialization
-                    class_embeddings.append(embedding)
-                except Exception as e:
-                    print(f"Error processing image {image_path}: {e}")
-            embeddings[class_folder] = class_embeddings
-    return embeddings
-
-def load_existing_embeddings(json_file_path):
-    if os.path.exists(json_file_path):
-        try:
-            with open(json_file_path, 'r') as f:
-                return json.load(f)
-        except Exception as e:
-            print(f"Error loading existing embeddings from JSON: {e}")
-            return {}
-    return {}
 
 def save_embeddings_to_json(embeddings, json_file_path):
     try:
@@ -191,19 +154,6 @@ def save_embeddings_to_json(embeddings, json_file_path):
         print(f"Embeddings successfully saved to {json_file_path}")
     except Exception as e:
         print(f"Error saving embeddings to JSON: {e}")
-
-def add_class_embs():
-    folder_path = "TabletImages/"
-    json_file_path = "meta/embeddings.json"
-    existing_embeddings = load_existing_embeddings(json_file_path)
-    new_embeddings = get_image_embeddings_from_folder(folder_path)
-    updated_embeddings = existing_embeddings.copy()
-    for class_name in list(updated_embeddings.keys()):
-        if class_name not in new_embeddings:
-            print(f"Removing class {class_name} from embeddings")
-            del updated_embeddings[class_name]
-    updated_embeddings.update(new_embeddings)
-    save_embeddings_to_json(updated_embeddings, json_file_path)
 
 def init_chatbot():
     chatbot.init()
