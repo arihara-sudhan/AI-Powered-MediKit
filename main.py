@@ -1,5 +1,5 @@
 import pygame as pg
-import utils
+import utils.utils as utils
 
 class MediUI:
     """
@@ -143,7 +143,7 @@ def main():
                             else:
                                 print("SOMETHING WENT WRONG")
                     elif clicked_module == "tablet":
-                        utils.classify_medicine()
+                        utils.fewshot()
 
                     elif clicked_module == "chatbot":
                         utils.init_chatbot()

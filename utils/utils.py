@@ -1,6 +1,7 @@
 from modules.img_classication import classify_image
 from modules.audio_classification import classify_mfcc
 from modules.text_similarity import chatbot
+from modules.img_fewshot_classification import init as fewshot_img_init
 import cv2
 import glob
 import json
@@ -144,7 +145,7 @@ def show_image(image_path, category, text, font_scale=1, thickness=2, background
 
 
 def get_meta(meta_name):
-    meta_file = f"./meta/{meta_name}.json"
+    meta_file = f"meta/{meta_name}.json"
     return load_json_data(meta_file)
 
 def save_embeddings_to_json(embeddings, json_file_path):
@@ -157,3 +158,6 @@ def save_embeddings_to_json(embeddings, json_file_path):
 
 def init_chatbot():
     chatbot.init()
+
+def fewshot():
+    fewshot_img_init.init()
