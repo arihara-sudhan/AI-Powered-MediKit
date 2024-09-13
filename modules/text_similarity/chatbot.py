@@ -12,12 +12,12 @@ with open('./meta/qa_pairs.json', 'r') as json_file:
 model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
 
 def get_answer(input_question):
-    with open('./embeddings/question_embeddings.pkl', 'rb') as f:
+    with open('data/text-sim/question_embeddings.pkl', 'rb') as f:
         questions, question_embeddings = pickle.load(f)
     input_embedding = model.encode([input_question])
     similarities = cosine_similarity(input_embedding, question_embeddings)
     closest_index = np.argmax(similarities)
-    return qa_pairs[closest_index]['answer']
+    return qa_pairs[closest_index-1]['answer']
 
 class ChatApp(QWidget):
     def __init__(self):
@@ -80,3 +80,5 @@ def init():
     chat_app = ChatApp()
     chat_app.show()
     sys.exit(app.exec_())
+
+init()
