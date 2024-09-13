@@ -2,4 +2,4 @@ models/
 assets/bgframes/
 __pycache__
 medenv/
-data/fewshot/tablet
+data/fewshot/tablet/embeddings.pkl
