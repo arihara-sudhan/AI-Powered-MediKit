@@ -2,4 +2,4 @@ models/
 assets/bgframes/
 __pycache__
 medenv/
-data/
+data/fewshot/tablet
