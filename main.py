@@ -5,7 +5,7 @@ class MediUI:
     """
     MediUI initializes a Pygame-based GUI for the AI Powered MediKit application.
     """
-    
+
     def __init__(self):
         pg.init()
         self.display = pg.display
@@ -59,9 +59,9 @@ class MediUI:
         """
         Render text on the screen.
         """
-        text_surface = self.font.render(text, True, (50, 106, 174))  # Blue color
+        text_surface = self.font.render(text, True, (50, 106, 174))
         self.screen.blit(text_surface, position)
-        text_surface2 = self.font_two.render("AI POWERED", True, (50, 106, 174))  # Blue color
+        text_surface2 = self.font_two.render("AI POWERED", True, (50, 106, 174))
         self.screen.blit(text_surface2, (position[0] + 100, position[1] - 6))
 
     def render_description(self, key, text, position):
