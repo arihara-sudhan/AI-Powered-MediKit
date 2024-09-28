@@ -80,5 +80,3 @@ def init():
     chat_app = ChatApp()
     chat_app.show()
     sys.exit(app.exec_())
-
-init()

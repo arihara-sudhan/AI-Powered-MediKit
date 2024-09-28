@@ -30,8 +30,8 @@ def get_embedding_for_image(image_path):
 class App:
     def __init__(self):
         self.det = HandDetector(detectionCon=0.8, maxHands=1)
-        self.color = (255, 255, 255)
-        self.innercolor = (0, 0, 0)
+        self.color = (0, 0, 0)
+        self.innercolor = (255, 255, 255)
         self.CAM = cv.VideoCapture(0)
         if not self.CAM.isOpened():
             print("Error: Camera not accessible.")
@@ -69,7 +69,6 @@ class App:
         print("Embeddings saved to embeddings.pkl")
 
     def create_buttons(self):
-        # Adjust button positions relative to the full screen dimensions
         self.button_rects = {
             "NEW CLASS": (self.frame_width - self.button_width - self.margin, self.margin,
                      self.frame_width - self.margin, self.margin + self.button_height),
@@ -96,10 +95,9 @@ class App:
             self.frame = cv.flip(self.frame, 1)
             hands, self.frame = self.det.findHands(self.frame, flipType=False)
 
-            # Draw buttons
             for label, rect in self.button_rects.items():
                 x1, y1, x2, y2 = rect
-                cv.rectangle(self.frame, (x1, y1), (x2, y2), self.color, -1)
+                cv.rectangle(self.frame, (x1, y1), (x2, y2), (0,0,0), -1)
                 cv.putText(self.frame, label, (x1 + 10, y1 + 60), cv.FONT_HERSHEY_DUPLEX, 1, self.innercolor, 2)
 
             if hands:

@@ -94,15 +94,19 @@ def find_closest_record(user_input, json_data):
     closest_record = None
     
     for record in json_data:
-        description = record.get('benefits', '')
-        description_emb = SENTENCE_TRANSFORMER_MODEL.encode(description)
-        distance = euclidean_distance(user_emb, description_emb)
-        
-        if distance < min_distance:
-            min_distance = distance
-            closest_record = record
+        benefits = record.get('benefits', [])
+        if benefits:
+            for benefit in benefits:
+                benefit_emb = SENTENCE_TRANSFORMER_MODEL.encode(benefit)
+                distance = euclidean_distance(user_emb, benefit_emb)
+                if distance < min_distance:
+                    min_distance = distance
+                    closest_record = record
     
-    return closest_record
+    if closest_record:
+        return closest_record
+    else:
+        return {"img_path": "./assets/herbs/notfound.png", "name": "Sorry! Not found in DB!"}
 
 
 def classify_audio(src_file_path, n_mfcc=13):

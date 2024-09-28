@@ -5,6 +5,7 @@ class MediUI:
     """
     MediUI initializes a Pygame-based GUI for the AI Powered MediKit application.
     """
+    
     def __init__(self):
         pg.init()
         self.display = pg.display

@@ -2,26 +2,21 @@
     {
         "img_path": "./assets/herbs/basil.jpg",
         "name": "Basil",
-        "benefits": "antioxidant, anti-inflammatory, antimicrobial, immune system support, stress relief, adaptogenic properties, digestive aid, anti-ulcer, heart health, blood sugar regulation, cholesterol management, anti-cancer, anti-diabetic, anti-viral, anti-bacterial, respiratory health, detoxification, liver protection, skin health, anti-aging, cognitive function, memory enhancement, mood enhancement, anxiety reduction, headache relief, cardiovascular support, anti-oxidative stress"
+        "benefits": ["headache", "cold", "fever"]
     },
     {
         "img_path": "./assets/herbs/neem.jpg",
         "name": "Neem",
-        "benefits": "antibacterial, antiviral, antifungal, anti-inflammatory, immune booster, skin health, acne treatment, wound healing, detoxification, liver health, blood purifier, anti-cancer, antioxidant, anti-diabetic, blood sugar regulation, digestive health, anti-parasitic, oral hygiene, gum health, dandruff treatment, hair health, insect repellent, anti-malaria, joint health, arthritis relief, anti-aging, anti-oxidative stress, cardiovascular support"
-    },
-    {
-        "img_path": "./assets/herbs/keelanelli.jpg",
-        "name": "Keelaanelli",
-        "benefits": "Neem leaf is used for leprosy, eye disorders, bloody nose, intestinal worms, stomach upset, loss of appetite, skin ulcers, diseases of the heart and blood vessels (cardiovascular disease), fever, diabetes, gum disease (gingivitis), and liver problems. The leaf is also used for birth control and to cause abortions."
+        "benefits": ["heat", "skin-health", "anti-bacterial", "anti-viral"]
     },
     {
         "img_path": "./assets/herbs/turmeric.jpg",
         "name": "Turmeric",
-        "benefits": "anti-inflammatory, antioxidant, pain relief, digestive health, immune booster, liver detoxification, wound healing, anti-cancer, anti-bacterial, anti-viral, arthritis, joint health, cardiovascular support, cholesterol reduction, blood sugar regulation, skin health, brain health, cognitive function, memory enhancement, depression alleviation, mood improvement, anti-aging, anti-oxidative stress, metabolic support, weight management"
+        "benefits": ["anti-inflammatory", "digestive health", "immune booster", "wound", "arthritis", "joint health", "cholesterol", "skin health"]
     },
     {
         "img_path": "./assets/herbs/tridax.jpg",
         "name": "Tridax Daisy",
-        "benefits": "anti-inflammatory, antioxidant, wound healing, antimicrobial, antibacterial, antifungal, antiviral, immune system support, blood clotting, hemostatic, skin health, hair growth, anti-diabetic, blood sugar regulation, liver protection, detoxification, anti-hypertensive, cardiovascular health, cholesterol management, digestive aid, gastroprotective, anti-cancer, anti-aging, anti-oxidative stress, pain relief, fever reduction"
+        "benefits": ["antioxidant", "wound healing", "Blood", "wound", "hurt", "scars"]
     }
 ]
