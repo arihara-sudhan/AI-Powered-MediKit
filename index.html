@@ -7,6 +7,8 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: blue;
+            color: white;
         }
         section {
             width: 60%;
@@ -33,152 +35,21 @@
                 width: 100%;
             }
         }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
         nav li {
             display: inline;
             margin-right: 15px;
         }
         nav a {
             text-decoration: none;
-            color: #2c3e50;
-            font-weight: bold;
-        }
-        body {
-            background-color: gray;
             color: white;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <center>
-        <h1>+ MediKit</h1>
-
-        <section id="heart">
-            <h2>Heart</h2>
-            <img src="https://www.cdc.gov/dhdsp/images/heart/overview/illustration-heart.jpg" alt="">
-            <p><strong>CARDIOMEGALY:</strong> Enlargement of the heart.</p>
-            <p>Treatment: Medications, surgery, lifestyle changes.</p>
-            <p><strong>NORMAL:</strong> A healthy heart without abnormalities.</p>
-        </section>
-
-        <section id="brain">
-            <h2>Brain</h2>
-            <img src="https://cdn.pixabay.com/photo/2016/03/31/20/11/brain-1298121_960_720.png" alt="">
-            <p><strong>GLIOMA:</strong> A type of tumor that occurs in the brain and spinal cord.</p>
-            <p>Treatment: Surgery, radiation therapy, chemotherapy.</p>
-            <p><strong>MENINGIOMA:</strong> A tumor that forms on membranes covering the brain and spinal cord.</p>
-            <p>Treatment: Surgery, radiation therapy.</p>
-            <p><strong>NORMAL:</strong> Healthy brain tissue without abnormalities.</p>
-            <p><strong>PITUITARY TUMOR:</strong> A growth in the pituitary gland at the base of the brain.</p>
-            <p>Treatment: Surgery, radiation therapy, medication.</p>
-        </section>
-
-        <section id="bone">
-            <h2>Bone</h2>
-            <img src="https://cdn.pixabay.com/photo/2018/04/10/14/49/knee-3312923_960_720.jpg" alt="">
-            <p><strong>FRACTURED:</strong> A break or crack in the bone.</p>
-            <p>Treatment: Casting, surgery, physical therapy.</p>
-            <p><strong>NOT FRACTURED:</strong> Healthy bone without fractures.</p>
-        </section>
-
-        <section id="breast">
-            <h2>Breast</h2>
-            <img src="https://news.mit.edu/sites/default/files/images/201905/BreastCancerAI.png" alt="">
-            <p><strong>CANCER:</strong> Breast cancer occurs when malignant cells form in the tissues of the breast.</p>
-            <p>Treatment: Surgery, chemotherapy, radiation therapy, hormone therapy, targeted therapy.</p>
-            <p><strong>NORMAL:</strong> Healthy breast tissue without abnormalities.</p>
-        </section>
-
-        <section id="eye">
-            <h2>Eye</h2>
-            <img src="https://www.southtees.nhs.uk/wp-content/uploads/2021/11/Background-Retinopathy-R1-800x535.jpg" alt="">
-            <p><strong>ACRIMA:</strong> Conditions associated with dry eye or lacrimal gland issues.</p>
-            <p>Treatment: Artificial tears, medications, lifestyle changes, surgery.</p>
-            <p><strong>ODIR:</strong> Dataset-related condition; specifics unknown.</p>
-            <p><strong>ORIGA:</strong> Related to detecting glaucoma.</p>
-            <p>Treatment: Medications, laser therapy, surgery.</p>
-            <p><strong>GLAUCOMA:</strong> A condition damaging the optic nerve due to high intraocular pressure.</p>
-            <p>Treatment: Eye drops, medications, laser treatment, surgery.</p>
-            <p><strong>CATARACT:</strong> Clouding of the eye's lens leading to decreased vision.</p>
-            <p>Treatment: Surgery to replace the lens.</p>
-            <p><strong>RETINAL DISEASE:</strong> Includes various conditions like diabetic retinopathy and macular degeneration.</p>
-            <p>Treatment: Medications, laser therapy, surgery.</p>
-        </section>
-
-        <section id="colon">
-            <h2>Colon</h2>
-            <img src="https://www.researchgate.net/publication/5689026/figure/fig1/AS:202963114041359@1425401585254/A-39-year-old-woman-with-mid-transverse-colon-cancer-Axial-CT-scan-reveals-irregular.png" alt="">
-            <p><strong>LESION:</strong> Abnormal tissue found in the colon, potentially benign or precancerous.</p>
-            <p>Treatment: Removal via colonoscopy, monitoring, surgery.</p>
-            <p><strong>NORMAL:</strong> Healthy colon tissue without abnormalities.</p>
-        </section>
-
-        <section id="ecg">
-            <h2>ECG (Electrocardiogram)</h2>
-            <img src="https://i.pinimg.com/originals/3f/c4/eb/3fc4ebac5fb063cb0094dd1c0389d495.gif" alt="">
-            <p><strong>NORMAL:</strong> A standard ECG reading with no abnormalities.</p>
-            <p><strong>VENTRICULAR:</strong> Ventricular arrhythmias, abnormal heart rhythms in the lower chambers.</p>
-            <p>Treatment: Medications, ablation, implantable devices, surgery.</p>
-            <p><strong>UNKNOWN:</strong> Unspecified or unclear ECG result.</p>
-            <p>Treatment: Further diagnostic testing.</p>
-            <p><strong>SUPRAVENTRICULAR:</strong> Arrhythmias originating above the ventricles.</p>
-            <p>Treatment: Medications, cardioversion, ablation, surgery.</p>
-            <p><strong>FUSION:</strong> Combination of normal and abnormal heart impulses.</p>
-            <p>Treatment: Depends on underlying cause.</p>
-        </section>
-
-        <section id="kidney">
-            <h2>Kidney</h2>
-            <img src="https://pocus101.b-cdn.net/wp-content/uploads/2020/09/Normal-Right-Kidney-Longitudinal-View-Renal-Ultrasound.gif" alt="">
-            <p><strong>CYST:</strong> Fluid-filled sacs in the kidneys, usually benign.</p>
-            <p>Treatment: Monitoring, draining, surgery.</p>
-            <p><strong>NORMAL:</strong> Healthy kidney tissue.</p>
-            <p><strong>STONE:</strong> Hard deposits in the kidneys.</p>
-            <p>Treatment: Increased water intake, medications, lithotripsy, surgery.</p>
-            <p><strong>TUMOR:</strong> Abnormal growths in the kidneys, benign or malignant.</p>
-            <p>Treatment: Surgery, chemotherapy, radiation, targeted therapy.</p>
-        </section>
-
-        <section id="lungs">
-            <h2>Lungs</h2>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Spiral_4DCT_Lung_%28Post%29.gif/800px-Spiral_4DCT_Lung_%28Post%29.gif" alt="">
-            <p><strong>PNEUMONIA (BACTERIAL):</strong> Lung infection caused by bacteria.</p>
-            <p>Treatment: Antibiotics, rest, fluids.</p>
-            <p><strong>CORONA:</strong> COVID-19 infection.</p>
-            <p>Treatment: Symptomatic treatment, antivirals, oxygen therapy.</p>
-            <p><strong>NORMAL:</strong> Healthy lung tissue.</p>
-            <p><strong>TUBERCULOSIS:</strong> Bacterial infection of the lungs.</p>
-            <p>Treatment: Multiple antibiotics over a long period.</p>
-            <p><strong>PNEUMONIA (VIRAL):</strong> Lung infection caused by viruses.</p>
-            <p>Treatment: Rest, fluids, antivirals, supportive care.</p>
-        </section>
-
-        <section id="blood">
-            <h2>Blood</h2>
-            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a1cdefad-2d46-4016-b732-e1785a9e9e63/d9gyb8f-ceacbae8-3dd6-491f-90bd-41cf81de1357.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2ExY2RlZmFkLTJkNDYtNDAxNi1iNzMyLWUxNzg1YTllOWU2M1wvZDlneWI4Zi1jZWFjYmFlOC0zZGQ2LTQ5MWYtOTBiZC00MWNmODFkZTEzNTcuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.oNsWfYg2sCfYuW_uxCIJvCJxcZDloCtqBqvql0z5vQk" alt="">
-            <p><strong>BENIGN:</strong> Non-cancerous blood conditions.</p>
-            <p>Treatment: Monitoring, treatment based on the condition.</p>
-            <p><strong>MALIGNANT (PRE-B):</strong> Precursor B-cell acute lymphoblastic leukemia (ALL).</p>
-            <p>Treatment: Chemotherapy, targeted therapy, radiation, stem cell transplant.</p>
-            <p><strong>MALIGNANT (PRO B):</strong> B-cell acute lymphoblastic leukemia (ALL).</p>
-            <p>Treatment: Similar to PRE-B; chemotherapy, targeted therapy, stem cell transplant.</p>
-            <p><strong>MALIGNANT (EARLY PRE-B):</strong> Early stage B-cell ALL.</p>
-            <p>Treatment: Chemotherapy, targeted therapy, stem cell transplant.</p>
-        </section>
-
-        <section id="oral">
-            <h2>Oral</h2>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Human_tongue.jpg/640px-Human_tongue.jpg" alt="">
-            <p><strong>NORMAL:</strong> Healthy oral tissue.</p>
-            <p><strong>CANCER:</strong> Malignant cells in the oral cavity.</p>
-            <p>Treatment: Surgery, radiation therapy, chemotherapy.</p>
-        </section>
-    </center>
-    <nav>
-        <ul>
+        <h1>AI POWERED MEDIKIT</h1>
+        <nav>
             <li><a href="#heart">Heart</a></li>
             <li><a href="#brain">Brain</a></li>
             <li><a href="#bone">Bone</a></li>
@@ -190,7 +61,169 @@
             <li><a href="#lungs">Lungs</a></li>
             <li><a href="#blood">Blood</a></li>
             <li><a href="#oral">Oral</a></li>
-        </ul>
-    </nav>
+        </nav>
+        <section id="heart">
+            <h2>Heart</h2>
+            <img src="https://assets.mayoclinic.org/content/dam/media/en/images/2023/02/09/enlarged-heart-in-heart-failure.jpg" alt="Heart Illustration">
+            <p><strong>CARDIOMEGALY:</strong> Enlargement of the heart.</p>
+            <p>Cardiomegaly, commonly referred to as an enlarged heart, occurs when the heart has to pump harder than normal. This may happen due to a range of conditions such as high blood pressure, coronary artery disease, or heart valve issues. The heart may enlarge in different ways: either the heart walls thicken, or the chambers of the heart expand, making it more difficult to pump blood efficiently.</p>
+            <p><strong>Causes of Cardiomegaly:</strong> Common causes include hypertension (high blood pressure), which forces the heart to work harder, leading to thickening of the heart muscle. Coronary artery disease can block arteries and reduce blood flow, requiring the heart to pump with greater force. Heart valve disease, where valves are damaged or defective, increases the heart’s workload. Cardiomyopathy, a disease of the heart muscle, can cause the heart to become enlarged and weakened. Arrhythmias, or abnormal heart rhythms, can lead to heart enlargement. Congenital heart defects, conditions people are born with, may cause inefficiencies in heart function over time. Severe anemia forces the heart to pump more blood to deliver oxygen, potentially causing enlargement. Finally, thyroid disorders, either overactive or underactive, can affect heart function and size.</p>
+            <p><strong>Symptoms of Cardiomegaly:</strong> The symptoms may include shortness of breath, especially during physical activity or while lying down. Fatigue and general weakness are common. Swelling in the legs, ankles, and feet (known as edema) may occur due to fluid retention. Irregular heartbeats, or arrhythmias, can cause a fluttering sensation in the chest. Some individuals experience dizziness or fainting spells, while others may suffer from chest pain or discomfort, particularly during exertion.</p>
+            <p><strong>Diagnosis of Cardiomegaly:</strong> A chest X-ray is often the first test that reveals an enlarged heart. An echocardiogram (echo) is a more detailed ultrasound that provides information on the heart’s structure and function. An electrocardiogram (ECG) monitors the heart’s electrical activity, helping detect arrhythmias or stress on the heart muscle. Advanced imaging techniques like CT scans or MRIs offer a more detailed view of the heart and surrounding vessels. Blood tests are often used to detect underlying conditions, such as thyroid problems or infections that may contribute to cardiomegaly.</p>
+            <p><strong>Treatment Options:</strong> Treatments include medications, surgery, and lifestyle changes. Diuretics help reduce fluid buildup, easing the heart’s workload. ACE inhibitors and ARBs relax blood vessels, lowering blood pressure and strain on the heart. Beta-blockers slow the heart rate and reduce blood pressure, which helps prevent the heart from overworking. Antiarrhythmics help control irregular heartbeats, which can exacerbate heart enlargement.</p>
+            <p>Surgical options include coronary bypass surgery, which restores blood flow to the heart by bypassing blocked arteries. Heart valve repair or replacement is used when damaged valves contribute to cardiomegaly. In more severe cases, implantable devices such as pacemakers or defibrillators are used to regulate the heart’s rhythm or prevent sudden cardiac arrest. For the most serious cases, a heart transplant may be necessary.</p>
+            <p>Lifestyle changes are critical for managing cardiomegaly. Adopting a heart-healthy diet that is low in sodium, unhealthy fats, and cholesterol is crucial to reduce heart strain. Regular, moderate physical activity can improve heart health, though it must be guided by a physician depending on the severity of the condition. Quitting smoking is essential, as it increases the risk of heart diseases and worsens cardiomegaly. Reducing alcohol intake can also prevent further heart damage. Stress management techniques, such as yoga, meditation, or counseling, can reduce strain on the heart.</p>
+            <p><strong>Complications:</strong> If left untreated, cardiomegaly can lead to serious complications, including heart failure, arrhythmias, blood clots, stroke, or sudden cardiac arrest.</p>
+            <p><strong>NORMAL:</strong> A healthy heart without abnormalities. Maintaining heart health through regular check-ups, a balanced diet, and exercise can prevent conditions like cardiomegaly.</p>
+        </section>
+        
+        <section id="brain">
+            <h2>Brain</h2>
+            <img src="https://www.medicoverhospitals.in/images/cancer/brain-cancer.webp" alt="Brain Illustration">
+            <p><strong>GLIOMA:</strong> A type of tumor that occurs in the brain and spinal cord.</p>
+            <p>Gliomas originate from the glial cells, which support and protect the neurons in the central nervous system. These tumors can vary from low-grade (slow-growing) to high-grade (aggressive). Symptoms may include headaches, seizures, memory loss, or difficulty with movement and coordination. Gliomas are classified into several types, including astrocytomas, oligodendrogliomas, and ependymomas, depending on the specific glial cell affected.</p>
+            <p><strong>Treatment:</strong> Glioma treatment typically involves surgery to remove as much of the tumor as possible. This is often followed by radiation therapy to target any remaining cancer cells. Chemotherapy may also be used, particularly for higher-grade gliomas, to slow or stop the tumor’s growth.</p>
+            <p><strong>MENINGIOMA:</strong> A tumor that forms on membranes covering the brain and spinal cord.</p>
+            <p>Meningiomas arise from the meninges, the layers of tissue that surround the brain and spinal cord. They are usually benign and slow-growing, though in some cases they can become malignant. Symptoms depend on the size and location of the tumor and may include headaches, vision problems, seizures, or changes in behavior. Meningiomas are more common in older adults and women.</p>
+            <p><strong>Treatment:</strong> Small, asymptomatic meningiomas may simply be monitored. For larger or symptomatic tumors, surgery is often the first option to remove the tumor. If the tumor cannot be fully removed, radiation therapy may be used to control its growth.</p>
+            <p><strong>PITUITARY TUMOR:</strong> A growth in the pituitary gland at the base of the brain.</p>
+            <p>Pituitary tumors occur in the small gland located just below the brain, which is responsible for regulating many important hormones in the body. Most pituitary tumors are benign (non-cancerous), but they can affect hormone levels and lead to conditions such as Cushing's disease or acromegaly. Symptoms may include vision problems, headaches, and hormonal imbalances, causing changes in mood, energy levels, and physical appearance.</p>
+            <p><strong>Treatment:</strong> Treatment typically involves surgery to remove the tumor, especially if it is pressing on the optic nerves or causing significant hormone imbalances. Radiation therapy may be used for residual tumors, and medications can help regulate hormone levels affected by the tumor.</p>
+            <p><strong>NORMAL:</strong> Healthy brain tissue without abnormalities.</p>
+            <p>The normal brain operates with healthy tissue, free from any abnormal growths or tumors. Proper brain function is essential for cognitive processes, sensory perception, motor function, and overall body regulation.</p>
+        </section>
+        
+
+        <section id="bone">
+            <h2>Bone</h2>
+            <img src="https://www.verywellhealth.com/thmb/cHeGmnzpI9aZT7TMLgCDrO2vohQ=/600x450/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1461318445-1e15fc572d5441dbb1234d2a153478b2.jpg" alt="Bone Illustration">
+            <p><strong>FRACTURED:</strong> A break or crack in the bone.</p>
+            <p>A bone fracture can result from trauma, accidents, falls, or conditions like osteoporosis, which weakens bones. Fractures may be classified into several types, including simple (closed), compound (open), hairline, and comminuted (multiple fragments). Symptoms typically include pain, swelling, bruising, and difficulty moving the affected limb or area.</p>
+            <p><strong>Treatment:</strong> Depending on the severity and type of fracture, treatment options include casting, where the bone is immobilized to allow healing, or surgery in cases of more complex fractures, such as inserting metal plates or rods. Physical therapy is often recommended during recovery to restore mobility and strength to the affected area.</p>
+            <p><strong>NOT FRACTURED:</strong> Healthy bone without fractures.</p>
+            <p>Healthy bones are strong and resilient, capable of supporting the body’s weight and withstanding physical stress. Maintaining bone health involves a balanced diet rich in calcium and vitamin D, regular weight-bearing exercise, and avoiding activities that put unnecessary strain on the bones.</p>
+        </section>
+                
+        <section id="breast">
+            <h2>Breast</h2>
+            <img src="https://news.mit.edu/sites/default/files/images/201905/BreastCancerAI.png" alt="Breast Cancer Illustration">
+            <p><strong>CANCER:</strong> Breast cancer occurs when malignant cells form in the tissues of the breast. It can start in the ducts or lobules and may spread to other parts of the body.</p>
+            <p>Risk factors include age, genetics, family history, lifestyle choices, and hormonal factors. Early detection through mammograms and self-examinations is crucial for successful treatment.</p>
+            <p><strong>Treatment:</strong> Common treatment options include surgery (lumpectomy or mastectomy), chemotherapy to kill cancer cells, radiation therapy to target remaining cells, hormone therapy to block hormones that fuel some cancers, and targeted therapy that focuses on specific characteristics of cancer cells.</p>
+            <p><strong>NORMAL:</strong> Healthy breast tissue without abnormalities, characterized by normal structure and function, with no signs of lumps or unusual changes.</p>
+        </section>
+        
+        <section id="eye">
+            <h2>Eye</h2>
+            <img src="https://www.southtees.nhs.uk/wp-content/uploads/2021/11/Background-Retinopathy-R1-800x535.jpg" alt="Eye Illustration">
+            <p><strong>ACRIMA:</strong> Conditions associated with dry eye or lacrimal gland issues, leading to discomfort and potential damage to the cornea.</p>
+            <p><strong>Treatment:</strong> Management may include artificial tears, prescription medications, lifestyle changes like increased hydration, and in some cases, surgery to improve tear production.</p>
+            
+            <p><strong>ODIR:</strong> A dataset-related condition; specifics are currently unknown but may refer to a dataset used for ocular disease recognition.</p>
+            
+            <p><strong>ORIGA:</strong> Related to detecting glaucoma, a condition characterized by damage to the optic nerve.</p>
+            <p><strong>Treatment:</strong> Management includes medications, laser therapy, and surgery to lower intraocular pressure and prevent further nerve damage.</p>
+        
+            <p><strong>GLAUCOMA:</strong> A condition damaging the optic nerve due to high intraocular pressure, often leading to vision loss.</p>
+            <p><strong>Treatment:</strong> Treatment may involve eye drops, medications to reduce pressure, laser treatment, and surgical options for severe cases.</p>
+        
+            <p><strong>CATARACT:</strong> Clouding of the eye's lens that leads to decreased vision and is common in older adults.</p>
+            <p><strong>Treatment:</strong> Surgery to remove the cloudy lens and replace it with an artificial one is the most effective treatment for restoring vision.</p>
+        
+            <p><strong>RETINAL DISEASE:</strong> Includes various conditions like diabetic retinopathy and macular degeneration that affect the retina.</p>
+            <p><strong>Treatment:</strong> Management may involve medications, laser therapy, and surgery to prevent further vision loss.</p>
+        </section>
+        
+        <section id="colon">
+            <h2>Colon</h2>
+            <img src="https://www.researchgate.net/publication/5689026/figure/fig1/AS:202963114041359@1425401585254/A-39-year-old-woman-with-mid-transverse-colon-cancer-Axial-CT-scan-reveals-irregular.png" alt="Colon Illustration">
+            <p><strong>LESION:</strong> Abnormal tissue found in the colon, which can be benign or precancerous. Lesions may be asymptomatic or cause symptoms such as blood in the stool or changes in bowel habits.</p>
+            <p><strong>Treatment:</strong> Options include removal via colonoscopy, regular monitoring, or surgical intervention depending on the lesion's characteristics and potential risk for cancer development.</p>
+            <p><strong>NORMAL:</strong> Healthy colon tissue without abnormalities, functioning properly for digestion and waste elimination.</p>
+        </section>
+        
+        <section id="ecg">
+            <h2>ECG (Electrocardiogram)</h2>
+            <img src="https://i.pinimg.com/originals/3f/c4/eb/3fc4ebac5fb063cb0094dd1c0389d495.gif" alt="ECG Illustration">
+            <p><strong>NORMAL:</strong> A standard ECG reading showing no abnormalities in heart rhythm or electrical activity.</p>
+            
+            <p><strong>VENTRICULAR:</strong> Ventricular arrhythmias are abnormal heart rhythms originating in the lower chambers of the heart.</p>
+            <p><strong>Treatment:</strong> Treatment options include medications to control heart rate, catheter ablation to eliminate abnormal electrical pathways, implantable devices like pacemakers, or surgery for severe cases.</p>
+            
+            <p><strong>UNKNOWN:</strong> Unspecified or unclear ECG result indicating the need for further diagnostic testing to determine underlying issues.</p>
+            
+            <p><strong>SUPRAVENTRICULAR:</strong> Arrhythmias originating above the ventricles, potentially causing palpitations and lightheadedness.</p>
+            <p><strong>Treatment:</strong> Management may involve medications, cardioversion to restore normal rhythm, catheter ablation, or surgery as needed.</p>
+            
+            <p><strong>FUSION:</strong> A combination of normal and abnormal heart impulses, which can be indicative of underlying heart issues.</p>
+            <p><strong>Treatment:</strong> Depends on the underlying cause, requiring further evaluation and monitoring.</p>
+        </section>
+        
+        <section id="kidney">
+            <h2>Kidney</h2>
+            <img src="https://pocus101.b-cdn.net/wp-content/uploads/2020/09/Normal-Right-Kidney-Longitudinal-View-Renal-Ultrasound.gif" alt="Kidney Illustration">
+            <p><strong>CYST:</strong> Fluid-filled sacs in the kidneys, usually benign and often discovered incidentally during imaging studies.</p>
+            <p><strong>Treatment:</strong> Typically involves monitoring; if symptomatic or large, options include draining the cyst or surgical intervention.</p>
+            
+            <p><strong>NORMAL:</strong> Healthy kidney tissue with normal structure and function, efficiently filtering blood and producing urine.</p>
+            
+            <p><strong>STONE:</strong> Hard deposits in the kidneys that can cause pain and complications.</p>
+            <p><strong>Treatment:</strong> Management may involve increased water intake to help pass the stone, medications for pain relief, lithotripsy to break stones into smaller pieces, or surgery for larger stones.</p>
+            
+            <p><strong>TUMOR:</strong> Abnormal growths in the kidneys, which may be benign (such as adenomas) or malignant (like renal cell carcinoma).</p>
+            <p><strong>Treatment:</strong> Surgical removal is common, with additional options including chemotherapy, radiation, and targeted therapy for cancerous growths.</p>
+        </section>
+        
+        <section id="lungs">
+            <h2>Lungs</h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Spiral_4DCT_Lung_%28Post%29.gif/800px-Spiral_4DCT_Lung_%28Post%29.gif" alt="Lungs Illustration">
+            <p><strong>PNEUMONIA (BACTERIAL):</strong> A lung infection caused by bacteria, leading to inflammation and fluid accumulation in the alveoli.</p>
+            <p><strong>Treatment:</strong> Typically involves antibiotics, along with rest and fluids to help recovery.</p>
+            
+            <p><strong>CORONA:</strong> COVID-19 infection caused by the SARS-CoV-2 virus, affecting the respiratory system.</p>
+            <p><strong>Treatment:</strong> Symptomatic treatment may include antivirals, oxygen therapy, and supportive care depending on severity.</p>
+            
+            <p><strong>NORMAL:</strong> Healthy lung tissue, functioning effectively for gas exchange and oxygen delivery to the body.</p>
+            
+            <p><strong>TUBERCULOSIS:</strong> A bacterial infection primarily affecting the lungs but can spread to other organs.</p>
+            <p><strong>Treatment:</strong> Requires multiple antibiotics over an extended period (typically 6-9 months) to effectively clear the infection.</p>
+            
+            <p><strong>PNEUMONIA (VIRAL):</strong> A lung infection caused by viruses, leading to inflammation and respiratory symptoms.</p>
+            <p><strong>Treatment:</strong> Focuses on rest, fluids, and may involve antivirals if applicable, along with supportive care.</p>
+        </section>
+        
+
+        <section id="blood">
+            <h2>Blood</h2>
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a1cdefad-2d46-4016-b732-e1785a9e9e63/d9gyb8f-ceacbae8-3dd6-491f-90bd-41cf81de1357.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2ExY2RlZmFkLTJkNDYtNDAxNi1iNzMyLWUxNzg1YTllOWU2M1wvZDlneWI4Zi1jZWFjYmFlOC0zZGQ2LTQ5MWYtOTBiZC00MWNmODFkZTEzNTcuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.oNsWfYg2sCfYuW_uxCIJvCJxcZDloCtqBqvql0z5vQk" alt="Blood Illustration">
+            <p><strong>BENIGN:</strong> Non-cancerous blood conditions.</p>
+            <p>Benign blood conditions can include disorders such as anemia, thrombocytopenia (low platelet count), and benign tumors of the blood cells. These conditions may not pose a significant threat to health and are often managed with regular monitoring, lifestyle changes, and treatments specific to the underlying condition. Symptoms might include fatigue, weakness, or easy bruising, depending on the specific disorder.</p>
+            <p><strong>Treatment:</strong> Treatment is typically based on the specific benign condition, which may involve regular monitoring, dietary adjustments, or medication to address symptoms and improve blood health.</p>
+        
+            <p><strong>MALIGNANT (PRE-B):</strong> Precursor B-cell acute lymphoblastic leukemia (ALL).</p>
+            <p>Pre-B ALL is a type of cancer that affects the bone marrow and blood, leading to the production of immature white blood cells that cannot function properly. Symptoms may include fatigue, fever, frequent infections, easy bruising, and bleeding.</p>
+            <p><strong>Treatment:</strong> The primary treatment involves intensive chemotherapy to eliminate leukemia cells. Targeted therapy and radiation may also be employed. In severe cases, a stem cell transplant may be necessary to restore healthy blood cell production.</p>
+        
+            <p><strong>MALIGNANT (PRO B):</strong> B-cell acute lymphoblastic leukemia (ALL).</p>
+            <p>Similar to Pre-B ALL, Pro B ALL is characterized by the proliferation of immature B-cells. This form of leukemia is aggressive and requires prompt treatment to improve outcomes.</p>
+            <p><strong>Treatment:</strong> Treatment regimens are similar to those for Pre-B ALL, focusing on chemotherapy, targeted therapy, and potential stem cell transplantation for long-term remission.</p>
+        
+            <p><strong>MALIGNANT (EARLY PRE-B):</strong> Early-stage B-cell ALL.</p>
+            <p>This early form of B-cell leukemia is crucial to treat promptly, as it can progress rapidly. Symptoms are akin to other forms of leukemia and may include weakness, fever, and unusual bleeding.</p>
+            <p><strong>Treatment:</strong> Chemotherapy is the mainstay of treatment, along with targeted therapy and stem cell transplants when necessary, aimed at eradicating leukemia cells and restoring healthy blood production.</p>
+        </section>
+        
+        <section id="oral">
+            <h2>Oral</h2>
+            <img src="https://irp.cdn-website.com/69c0b277/dms3rep/multi/Oral+Cancer+Symptoms-+Causes-+Stages-+Risk+Factors-+Complications+-+Prevention.jpg" alt="Human Tongue">
+            <p><strong>NORMAL:</strong> Healthy oral tissue.</p>
+            <p>Normal oral health is characterized by the absence of disease, healthy gums, and teeth free from cavities. Good oral hygiene practices, such as regular brushing and flossing, along with routine dental check-ups, contribute to maintaining oral health.</p>
+            
+            <p><strong>CANCER:</strong> Malignant cells in the oral cavity.</p>
+            <p>Oral cancer can occur in various parts of the mouth, including the lips, tongue, gums, and cheeks. Symptoms may include persistent sores, lumps, difficulty swallowing, and changes in voice. Risk factors include tobacco use, heavy alcohol consumption, and HPV infection.</p>
+            <p><strong>Treatment:</strong> Treatment for oral cancer often involves a combination of surgery to remove the tumor, radiation therapy to target cancer cells, and chemotherapy to eliminate remaining cancerous cells. Early detection is crucial for effective treatment and better outcomes.</p>
+        </section>
+        
+    </center>
 </body>
 </html>
